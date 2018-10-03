@@ -39,8 +39,7 @@ void AWaterBottle::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
     PlayerInputComponent->BindAxis("MoveForward", this, &AWaterBottle::MoveForward);
     PlayerInputComponent->BindAxis("MoveRight", this, &AWaterBottle::MoveRight);
-    PlayerInputComponent->BindAxis("SprintForward", this, &AWaterBottle::SprintForward);
-    PlayerInputComponent->BindAxis("SprintRight", this, &AWaterBottle::SprintRight);
+    PlayerInputComponent->BindAxis("Sprint", this, &AWaterBottle::Sprint);
 }
 
 void AWaterBottle::MoveForward(float Value)
@@ -51,16 +50,11 @@ void AWaterBottle::MoveForward(float Value)
 void AWaterBottle::MoveRight(float Value)
 {
     AddMovementInput(GetActorRightVector(), Value*.5);
+
 }
 
-void AWaterBottle::SprintForward(float Value)
+void AWaterBottle::Sprint(float Value)
 {
-    if
-    AddMovementInput(GetActorForwardVector(), Value*2);
-}
-
-void AWaterBottle::SprintRight(float Value)
-{
-    AddMovementInput(CustomTimeDilation*, Value * 2);
+    AddMovementInput(GetPendingMovementInputVector(), Value * 2);
 }
 
