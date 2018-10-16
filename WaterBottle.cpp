@@ -57,4 +57,3 @@ void AWaterBottle::Sprint(float Value)
 {
     AddMovementInput(GetPendingMovementInputVector(), Value * 2);
 }
-
